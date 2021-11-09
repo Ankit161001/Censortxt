@@ -6,6 +6,36 @@
 #Github:: https://github.com/Ankit161001
 
 import sqlite3
+import os
+
+def create():
+    os.system('touch mydb.db')
+    connection = sqlite3.connect("mydb.db")
+    cursor = connection.cursor()
+    query = "CREATE TABLE names (id varchar(4), name varchar(50));"
+    cursor.execute(query)
+    connection.commit()
+    query = """INSERT INTO names (id, name) VALUES 
+            ('EN01', 'shit'),
+            ('EN02', 'damn'),
+            ('EN03', 'goddamn'),
+            ('EN04', 'fuck'),
+            ('EN05', 'nigga'),
+            ('EN06', 'nigger'),
+            ('EN07', 'bitch'),
+            ('EN08', 'ass'),
+            ('EN09', 'asshole'),
+            ('EN10', 'motherfucker'),
+            ('EN11', 'cunt'),
+            ('EN12', 'dick'),
+            ('EN13', 'bastard'),
+            ('EN14', 'faggot'),
+            ('EN15', 'maggot'),
+            ('EN16', 'whore');"""
+    cursor.execute(query)
+    connection.commit()
+    cursor.close()
+    connection.close()
 
 def custom():
     connection = sqlite3.connect("mydb.db")
