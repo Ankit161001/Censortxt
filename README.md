@@ -4,6 +4,14 @@ A python package which censors parts of text.
 ### About the package
 The package works alongside a database of words which contains the words meant to be censored from the text. The words in the database can be edited as per a user's choice.
 <br>
+### Usage
+After the `pip install` command, include the following lines in your python code. <br>
+`from censortxt import censor_text` <br>
+It imports the components of the package. <br>
+Then execute the following code to create a database in the local directory. <br>
+`censor_text.create()` <br>
+Note: use this code just once as only one instance of the database is needed.
+
 ### Documentation
 Here are the functionalities available with the following package:
 1) `censor(--text passed here--)` this function censors the text passed along with it and prints the censored text.
